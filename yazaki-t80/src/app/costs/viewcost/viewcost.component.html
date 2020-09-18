@@ -1,0 +1,196 @@
+<app-sidemenu>
+
+</app-sidemenu>
+
+
+<div class="page-container ">
+
+
+    <app-navbar>
+
+    </app-navbar>
+
+
+    <div class="page-content-wrapper mb-5 ">
+        <div class="content ">
+
+            <div class="social-wrapper">
+                <div class="social " data-pages="social">
+                    <!-- START JUMBOTRON -->
+                    <div class="jumbotron" data-pages="parallax" data-social="cover">
+                        <div class="cover-photo"
+                            style="background-image: url(&quot;https://www.yazaki-europe.com/fileadmin/user_upload/Startseite/sliderbild-innovative-partner.png&quot;); transform: translateY(0px);">
+
+                        </div>
+                        <div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+                            <div class="inner" style="transform: translateY(0px); opacity: 1;">
+                                <div class="pull-bottom bottom-left ">
+
+                                    <h1 class="text-white no-margin titilenexsize"><span
+                                            class="semi-bold titilenexsize">Front loading
+                                            Cost - New Project</span> T80 </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+  
+            <div class="container" *ngIf="dataco" >
+
+                <div class="bg-white">
+                    <div class="container">
+                        <ol class="breadcrumb breadcrumb-alt">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">costs</li>
+                            <div *ngIf="dataco.approved !== 'approved'"> 
+                            <button class="btn btn-success btn-cons m-b-10 pull-right" (click)="validate()"  type="button"> <span>
+                                    Validate</span>
+                            </button>
+                        </div>
+                        <div *ngIf="dataco.approved === 'approved'"> 
+                            <button class="btn btn-success btn-cons m-b-10 pull-right"   printTitle="YAZAKI-COSTS"  
+                            printSectionId="print-section"      ngxPrint  > <span>
+                                    Print</span>
+                            </button>
+                        </div>
+                        </ol>
+
+                    </div>
+                </div>
+
+                <div class=" container    container-fixed-lg">
+
+                    <div class="card card-default m-t-20 " id="print-section" >
+                        <div class="card-body">
+                            <div class="invoice padding-50 sm-padding-10">
+                                <div>
+                                    <div class="pull-left">
+                                        <img width="150" height="20" alt="" class="invoice-logo"
+                                          
+                                            src="https://www.yazaki-europe.com/typo3conf/ext/typo3sz_assets/Resources/Default/Public/Images/logo.png">
+                                        <address class="m-t-10">
+                                            YAZAKI MOROCCO
+                                            <br><b>RC 20521</b> Tanger
+                                            <br>
+                                        </address>
+                                    </div>
+                                   
+                                    <div class="clearfix"></div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-lg-9 col-sm-height sm-no-padding">
+                                            <p class="small no-margin">Department</p>
+                                            <h5 class="semi-bold m-t-0">{{dataco.department}}</h5> 
+                                            <address>
+                                                <strong>Added by:</strong>
+                                                <br> <b>  {{dataco.users.email }}</b>  {{dataco.users.name }}
+                                            
+                                            </address>
+                                        </div>
+                                        <div
+                                            class="col-lg-3 sm-no-padding sm-p-b-20 d-flex align-items-end justify-content-between">
+                                            <div>
+                                                <div class="font-montserrat bold all-caps">Costs No :</div>
+                                                <div class="font-montserrat bold all-caps"> date :</div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="">00{{dataco.id}}</div>
+                                                <div class="">{{dataco.created_at}}</div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-invoice">
+                                    <table class="table m-t-50">
+                                        <thead>
+                                            <tr>
+                                                <th class="">Costs Description</th>
+                                                <th class="text-center">Client</th>
+                                                <th class="text-center">Projet</th>
+                                                <th class="text-right">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            <tr *ngFor="let dd of dataco.indivcosts" >
+                                                <td class="">
+                                                    <p class="text-black">{{dd.category}} </p>
+                                                    <p class="small hint-text">
+                                                        {{dd.reason}}
+                                                    </p>
+                                                </td>
+                                                <td class="text-center">{{dd.client}}</td>
+                                                <td class="text-center">{{dd.projet}}  </td>
+                                                <td class="text-right">{{dd.amount}} €</td>
+                                            </tr>
+                                        
+                                          
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div>
+                                    <img width="150" height="58" alt="" class="invoice-signature"
+                                    [src]="dataco.storageimage" *ngIf="dataco.storageimage"
+
+                                       >
+                                    <p>Designer’s Identity</p>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="p-l-15 p-r-15">
+                                    <div class="row b-a b-grey">
+                                       
+                                        <div
+                                            class="col-md-5 clearfix sm-p-b-15 d-flex flex-column justify-content-center">
+                                            
+                                        </div>
+                                        <div
+                                            class="col-md-5 text-right bg-contrast-higher col-sm-height padding-15 d-flex flex-column justify-content-center align-items-end">
+                                            <h5
+                                                class="font-montserrat all-caps small no-margin hint-text  bold">
+                                                Total</h5>
+                                            <h1 class="no-margin ">{{calculateMealTotal(dataco.indivcosts) }} €</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="small hint-text">This document is intended for data traceability and to validate costs that are internal or external.
+the validation of costs cannot be changed or modified by employees</p>
+                               
+                                <br>
+                                <hr>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+</div>

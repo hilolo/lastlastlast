@@ -1,0 +1,131 @@
+<app-sidemenu>
+    
+</app-sidemenu>
+
+
+
+<div class="page-container ">
+  
+    
+    <app-navbar>
+    
+    </app-navbar>
+    
+
+
+
+    <div class="page-content-wrapper mb-5 ">
+        <div class="content ">
+
+          <div class="social-wrapper">
+            <div class="social ">
+              <!-- START JUMBOTRON -->
+              <div class="jumbotron" >
+                <div class="cover-photo"
+                  style="background-image: url(&quot;https://www.yazaki-europe.com/fileadmin/user_upload/Startseite/sliderbild-innovative-partner.png&quot;); transform: translateY(0px);">
+  
+                </div>
+                <div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+                  <div class="inner" style="transform: translateY(0px); opacity: 1;">
+                    <div class="pull-bottom bottom-left ">
+  
+                      <h1 class="text-white no-margin titilenexsize"><span class="semi-bold titilenexsize">Front loading
+                          Cost - New Project</span> T80</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+            </div>
+           
+  
+          </div>
+         
+          
+          <div class="container">
+         
+            <div class="bg-white">
+                <div class="container">
+                  <ol class="breadcrumb breadcrumb-alt">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Add Groupe</li>
+                 
+                  </ol>
+                
+                </div>
+              </div>
+
+            
+
+                   
+
+         
+        </div>
+        <div class=" container    container-fixed-lg">
+            <!-- START card -->
+            <div class="card card-transparent">
+             
+              <div class="card-block">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h3>Add new group and add member to be able to do announcements</h3>
+                  
+                    <br>
+                   
+                    <form (ngSubmit)="submit" #addgorup="ngForm">
+                    
+                      <div class="form-group row">
+                        <label for="fname" class="col-md-3 control-label">title</label>
+                     
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="title" placeholder="title"
+                            required (keypress)="changetitle()"
+                            [(ngModel)]="grp.title" name="title">
+                          </div>
+                       
+                          <div class="col-md-2">
+                            <input type="text" class="form-control" id="prefix" placeholder="prefix" maxlength="3" 
+                            [(ngModel)]="grp.prefix"  name="prefix">
+                            </div>
+                        
+                      </div>
+                  
+                   
+                   
+                      <div class="form-group row">
+                        <label for="name" class="col-md-3 control-label">Description </label>
+                        <div class="col-md-9">
+                          <textarea [(ngModel)]="grp.Descrption" name="Descrption"   class="form-control" id="" rows="4" placeholder="Description"></textarea>
+                        </div>
+                      </div>
+                      
+                      <br>
+                      <div class="row pull-right ">
+                    
+                        <div mat-dialog-actions>
+                            <button mat-raised-button color="warn"   [type]="submit" [disabled]="!addgorup.valid"  (click)="confirmAdd()">Save</button>
+                            <button mat-button tabindex="-1">Cancel</button>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END card -->
+          </div>
+       
+          
+  
+  
+  
+        </div>
+  
+  
+  
+      </div>
+</div>
+
+
+
+

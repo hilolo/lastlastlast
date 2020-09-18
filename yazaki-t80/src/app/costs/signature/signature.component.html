@@ -1,0 +1,11 @@
+<h5 class="font-montserrat text-uppercase semi-bold fs-18 m-l-10">Please sign to validate these costs</h5>
+<div class="m-l-15" style="width: 60%;">
+    <ng-signature-pad 
+    doneButtonText="Validate"
+    format="base64"
+    
+
+    (done)="validate($event)">
+  </ng-signature-pad>
+  </div>
+  <img [src]="signatureImage" *ngIf="signatureImage" />

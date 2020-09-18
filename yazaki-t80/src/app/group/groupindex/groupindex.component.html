@@ -1,0 +1,188 @@
+<app-sidemenu> </app-sidemenu>
+
+<div class="page-container">
+  <app-navbar> </app-navbar>
+
+  <div class="page-content-wrapper mb-5">
+    <div class="content">
+      <div class="social-wrapper">
+        <div class="social" data-pages="social">
+          <!-- START JUMBOTRON -->
+          <div class="jumbotron" data-pages="parallax" data-social="cover">
+            <div
+              class="cover-photo"
+              style="
+                background-image: url('https://www.yazaki-europe.com/fileadmin/user_upload/Startseite/sliderbild-innovative-partner.png');
+                transform: translateY(0px);
+              "
+            ></div>
+            <div class="container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+              <div
+                class="inner"
+                style="transform: translateY(0px); opacity: 1;"
+              >
+                <div class="pull-bottom bottom-left">
+                  <h1 class="text-white no-margin titilenexsize">
+                    <span class="semi-bold titilenexsize"
+                      >Front loading Cost - New Project</span
+                    >
+                    T80
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="bg-white">
+          <div class="container">
+            <ol class="breadcrumb breadcrumb-alt">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Groupes</li>
+              <button
+                class="btn btn-success btn-cons m-b-10 pull-right"
+                routerLink="/AddGrp"
+                type="button"
+              >
+                <i class="fa fa-cloud-upload"></i> <span> Add New Groupe</span>
+              </button>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid container-fixed-lg bg-white">
+        <!-- START card -->
+        <div class="card card-transparent">
+          <div class="card-header">
+            <div class="card-title">Pages Default Taables Style</div>
+          </div>
+
+          <div class="card-block">
+            <div class="table-responsive">
+              <div id="basicTable_wrapper" class="dataTables_wrapper no-footer">
+                <table
+                  class="table table-hover dataTable no-footer"
+                  id="basicTable"
+                  role="grid"
+                >
+                  <thead>
+                    <tr role="row">
+                
+                      <th
+                        style="width: 176px;"
+                        class="sorting_desc"
+                        tabindex="0"
+                        aria-controls="basicTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-sort="descending"
+                        aria-label="Title: activate to sort column ascending"
+                      >
+                        Title
+                      </th>
+                      <th
+                        style="width: 70px;"
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="basicTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Places: activate to sort column ascending"
+                      >
+                        Link
+                      </th>
+                      <th
+                        style="width: 276px;"
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="basicTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Activities: activate to sort column ascending"
+                      >
+                      Description 
+                      </th>
+                      <th
+                        style="width: 124px;"
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="basicTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Status: activate to sort column ascending"
+                      >
+                        Group Owner 
+                      </th>
+                      <th
+                        style="width: 125px;"
+                        class="sorting"
+                        tabindex="0"
+                        aria-controls="basicTable"
+                        rowspan="1"
+                        colspan="1"
+                        aria-label="Last Update: activate to sort column ascending"
+                      >
+                      Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  
+                      
+                   
+                        <tr *ngFor="let gr of datag"  class="odd">
+                          <td class="v-align-middle sorting_1">
+                            <p> {{ gr.title }}</p>
+                          </td>
+                          <td class="v-align-middle">
+                            <a  class="text-primary no-margin" href="/viewgroup/{{ gr.prefix }}"> /{{ gr.prefix }} </a>
+
+                          </td>
+                          <td class="v-align-middle">
+                            <p>
+                              {{ gr.Descrption }}
+                            </p>
+                          </td>
+                          <td class="v-align-middle">
+                           
+                            <div *ngIf="gr.users.id == userid ; else elseBlock">  <p>  ME  </p> </div>
+                            <ng-template #elseBlock>  <p>{{ gr.users.name }} (manager  {{ gr.users.type | typereformat }}    )  </p>  </ng-template>
+
+                          </td>
+                          <td class="v-align-middle">
+                            <div *ngIf="gr.users.id == userid">  
+                            <button mat-icon-button color="Primary" (click)="view(gr)">
+                              <mat-icon>remove_red_eye</mat-icon>
+                            </button>
+                           
+                            <button mat-icon-button color="Primary" (click)="view2( gr.id)">
+                              <mat-icon>exposure_plus_1</mat-icon>
+                            </button>
+                      
+                            <button mat-icon-button color="Primary" >
+                              <mat-icon>edit</mat-icon>
+                            </button>
+                            </div>
+                          </td>
+                        </tr>
+                    
+              
+                    
+
+                   
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END card -->
+      </div>
+    </div>
+  </div>
+</div>

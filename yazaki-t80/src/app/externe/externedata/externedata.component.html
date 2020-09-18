@@ -1,0 +1,246 @@
+<app-sidemenu> </app-sidemenu>
+
+<div class="page-container">
+  <app-navbar> </app-navbar>
+
+  <div class="page-content-wrapper mb-5">
+    <div class="content">
+      <div class="social-wrapper">
+        <div class="social" data-pages="social">
+          <!-- START JUMBOTRON -->
+          <div class="jumbotron" data-pages="parallax" data-social="cover">
+            <div
+              class="cover-photo"
+              style="
+                background-image: url('https://www.yazaki-europe.com/fileadmin/user_upload/Startseite/sliderbild-innovative-partner.png');
+                transform: translateY(0px);
+              "
+            ></div>
+            <div class="container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+              <div
+                class="inner"
+                style="transform: translateY(0px); opacity: 1;"
+              >
+                <div class="pull-bottom bottom-left">
+                  <h1 class="text-white no-margin titilenexsize">
+                    <span class="semi-bold titilenexsize">DATA SHARE</span>
+                    T80
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END JUMBOTRON -->
+
+          <div class="bg-white">
+            <div class="container">
+              <ol class="breadcrumb breadcrumb-alt">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">costs</li>
+                <button
+                  class="btn btn-success btn-cons m-b-10 pull-right"
+                  routerLink="/Addcosts"
+                  type="button"
+                >
+                  <i class="fa fa-cloud-upload"></i> <span> Add New</span>
+                </button>
+              </ol>
+            </div>
+          </div>
+
+          <!-- END CONTAINER FLUID -->
+
+          <div class="container-fluid container-fixed-lg bg-white">
+            <!-- START card -->
+            <div class="card card-transparent">
+              <div class="card-header"></div>
+              <div class="card-block">
+                <div class="table-responsive">
+                  <div
+                    id="basicTable_wrapper"
+                    class="dataTables_wrapper no-footer"
+                  >
+                    <table
+                      class="table table-hover dataTable no-footer"
+                      id="basicTable"
+                      role="grid"
+                    >
+                      <thead>
+                        <tr role="row">
+                        
+                         
+                          
+                          <th
+                            style="width: 176px;"
+                            class="sorting_desc"
+                            tabindex="0"
+                            aria-controls="basicTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-sort="descending"
+                            aria-label="Title: activate to sort column ascending"
+                          >
+                            URL
+                          </th>
+                          <th
+                            style="width: 50px;"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="basicTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Places: activate to sort column ascending"
+                          >
+                            TOKEN 
+                          </th>
+                          <th
+                            style="width:40px;"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="basicTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Activities: activate to sort column ascending"
+                          >
+                            METHODE
+                          </th>
+                          <th
+                            style="width: 124px;"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="basicTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Status: activate to sort column ascending"
+                          >
+                            Status
+                          </th>
+                          <th
+                            style="width: 125px;"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="basicTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Last Update: activate to sort column ascending"
+                          >
+                           ACtion
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr role="row" class="odd">
+                          
+                          <td class="v-align-middle sorting_1">
+                            <p>/shared/06202020-K0-T</p>
+                          </td>
+                          <td class="">
+                            <button
+                            class="btn btn-success btn-cons m-b-10 pull-right"
+                            routerLink="/Addcosts"
+                            type="button"
+                          >
+                            <i class="fa fa-copy"></i> <span> Copy to clipboard</span>
+                          </button>
+                          </td>
+                          <td class="v-align-middle">
+                            <p>
+                                GET 
+                            </p>
+                          </td>
+                          <td class="v-align-middle">
+                            <p class="text-success">Active (expired in 2 days)</p>
+                          </td>
+                          <td class="v-align-middle">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success"><i class="fa fa-eye-slash"></i>
+                                </button>
+                                <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-success"><i class="fa fa-envelope"></i>
+                                </button>
+                              </div>
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          
+                            <td class="v-align-middle sorting_1">
+                              <p>/shared/06052020-P0X</p>
+                            </td>
+                            <td class="">
+                              <button
+                              class="btn btn-success btn-cons m-b-10 pull-right"
+                              routerLink="/Addcosts"
+                              type="button"
+                            >
+                              <i class="fa fa-copy"></i> <span> Copy to clipboard</span>
+                            </button>
+                            </td>
+                            <td class="v-align-middle">
+                              <p>
+                               GET
+                              </p>
+                            </td>
+                            <td class="v-align-middle">
+                                <p class="text-danger">Expired</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-eye-slash"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-envelope"></i>
+                                    </button>
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr role="row" class="odd">
+                          
+                            <td class="v-align-middle sorting_1">
+                              <p>Life’s sadness shared</p>
+                            </td>
+                            <td class="">
+                              <button
+                              class="btn btn-success btn-cons m-b-10 pull-right"
+                              routerLink="/Addcosts"
+                              type="button"
+                            >
+                              <i class="fa fa-copy"></i> <span> Copy to clipboard</span>
+                            </button>
+                            </td>
+                            <td class="v-align-middle">
+                              <p>
+                                GET
+                              </p>
+                            </td>
+                            <td class="v-align-middle">
+                                <p class="text-success">Active (expired in 66 days)</p>
+                            </td>
+                            <td class="v-align-middle">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success"><i class="fa fa-eye-slash"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-envelope"></i>
+                                    </button>
+                                  </div>
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END card -->
+          </div>
+        </div>
+        <!-- /container -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-navbar [user]="user"></app-navbar>

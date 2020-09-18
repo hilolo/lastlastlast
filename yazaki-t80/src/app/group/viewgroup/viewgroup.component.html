@@ -1,0 +1,198 @@
+<app-sidemenu> </app-sidemenu>
+
+<div class="page-container">
+  <app-navbar> </app-navbar>
+
+  <div class="page-content-wrapper mb-5">
+    <div class="content">
+      <div class="social-wrapper">
+        <div class="social" data-pages="social">
+          <!-- START JUMBOTRON -->
+          <div class="jumbotron" data-pages="parallax" data-social="cover">
+            <div
+              class="cover-photo"
+              style="
+                background-image: url('https://www.yazaki-europe.com/fileadmin/user_upload/Startseite/sliderbild-innovative-partner.png');
+                transform: translateY(0px);
+              "
+            ></div>
+            <div class="container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+              <div
+                class="inner"
+                style="transform: translateY(0px); opacity: 1;"
+              >
+                <div class="pull-bottom bottom-left">
+                  <h1 class="text-white no-margin titilenexsize">
+                    <span class="semi-bold titilenexsize"
+                      >Front loading Cost - New Project</span
+                    >
+                    T80
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="bg-white">
+          <div class="container">
+            <ol class="breadcrumb breadcrumb-alt">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Groupes</li>
+              
+              <div *ngIf="datag.users.id == userid">  
+          <div class="col-3 input-group pull-right">
+                      <span class="input-group-addon primary">
+                          <i class="fa fa-user-plus"></i>
+                      </span>
+                      <input type="text" placeholder="Registration Number"  [(ngModel)]="RegNumber" (keyup.enter)="Adduser(datag.id )"  Ng class="form-control">
+                    </div>
+
+              <button
+                class="btn btn-success btn-cons m-b-10 pull-right"
+                routerLink="/Posts/{{ datag.id }}"
+                type="button"
+              >
+                <i class="fa fa-cloud-upload"></i> <span> Add New Post</span>
+              </button>
+            </div>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+        <div class="feed">
+          <!-- START DAY -->
+         
+        
+              <div class="container-fluid p-t-30 p-b-10 ">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="container-xs-height">
+                      <div class="row-xs-height">
+                        <div class="social-user-profile col-xs-height text-center col-top">
+                          <div class="thumbnail-wrapper d48 circular bordered b-white">
+                            <img alt="Avatar" width="55" height="55"  src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png">
+                          </div>
+                          <br>
+                          
+                        </div>
+                        <div class="col-xs-height p-l-20">
+                          <h3 class="no-margin p-b-5">{{ datag.users.name }}</h3>
+                         
+                          <p class="hint-text m-t-5 small">Manager | {{ datag.users.type | typereformat }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <p class="no-margin fs-16">{{ datag.title }}</p>
+                    <p class="hint-text m-t-5 small">{{ datag.Descrption }}</p>
+                  </div>
+                  <div class="col-lg-2">
+                    <p class="m-b-5 small">{{ datag.groupmember.length+1  }} Members</p>
+
+                    <ul class="list-unstyled ">
+                      <div *ngIf="datag.groupmember.length >= 2 ">
+                      <li class="m-r-10">
+                        <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
+                          <img width="35" height="35"  alt="Profile Image" src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png">
+                        </div>
+                      </li>
+                      <li>
+                        <div class="thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white">
+                          <img width="35" height="35" alt="Profile Image" src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png">
+                        </div>
+                      </li>
+                    </div>
+                    
+                      <li>
+                        <div class="thumbnail-wrapper d32 circular b-white">
+                          <div class="bg-master text-center text-white"><span>+{{datag.groupmember.length -1  }}</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <br>
+                    <a href="/Groupe/members/{{datag.id}}">  <p class="m-t-5 small">All Members</p></a>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid  " style="width:900px;" >
+
+              
+                <div class="card social-card share full-width" *ngFor="let gr of postsr;let i = index;" >
+                
+                    <div class="circle" data-toggle="tooltip" title="" data-container="body" data-original-title="Label">
+                    </div>
+                    <div class="card-header clearfix">
+                      <div class="user-pic">
+                        <img alt="Profile Image" width="33" height="33"  src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png">
+                        
+                      </div>
+                      <div *ngIf="datag.users.id == userid">  
+                      <a  (click)="deletepst(gr.id)" class=" pull-right" >
+                        <mat-icon style="color: red;" >delete</mat-icon></a>  
+                      </div>
+
+                      <h5>{{ datag.users.name }}
+                        
+                      </h5>
+                      <h6>Manager | 
+                            <span class="location semi-bold"><i class="fa fa-bookmark"></i> {{ datag.users.type | typereformat }}</span>
+                        
+                        </h6>
+               
+
+                      
+                      
+
+
+                    </div>
+                    <div class="card-description">
+             
+                     <div [innerHTML]="gr.text"></div>
+                     
+                    </div>
+                  
+                    <div class="card-description"  *ngFor="let c of gr.comments;"  >
+  
+                      <div *ngIf="c.user_id == userid"> 
+                      <a  (click)="deletemem(c.id)" class=" pull-right" >
+                        <mat-icon style="color: red;" >delete</mat-icon></a> 
+                      </div>
+
+                        <p>{{c.content}} </p>
+                        <div class="via">via {{c.nomuser}}</div>
+                      </div>
+                      <div class="card-description">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group form-group-default required bg-light">
+                                <label>Comment </label>
+                                <textarea style="height: 50px;" [(ngModel)]="postsr[i].name"  class="form-control"  rows="2"> {{i}}  </textarea>
+
+                                <button
+                                class="btn btn-success btn-cons m-b-10 pull-right"
+                                (click)="addcmnt(gr.id,i)"
+                                type="button"
+                              > Add Comment </button>
+                              </div>
+                           
+                          </div>
+                      </div>
+                  </div>
+            </div>
+              
+         
+          <!-- END DAY -->
+        </div>
+        <!-- END FEED -->
+      </div>
+    </div>
+  </div>
+</div>

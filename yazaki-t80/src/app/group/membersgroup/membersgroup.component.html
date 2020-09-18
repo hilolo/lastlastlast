@@ -1,0 +1,101 @@
+<app-sidemenu> </app-sidemenu>
+
+<div class="page-container">
+  <app-navbar> </app-navbar>
+
+  <div class="page-content-wrapper mb-5">
+    <div class="content">
+      <div class="social-wrapper">
+        <div class="social" data-pages="social">
+          <!-- START JUMBOTRON -->
+          <div class="jumbotron" data-pages="parallax" data-social="cover">
+            <div
+              class="cover-photo"
+              style="
+                background-image: url('https://www.yazaki-europe.com/fileadmin/user_upload/Startseite/sliderbild-innovative-partner.png');
+                transform: translateY(0px);
+              "
+            ></div>
+            <div class="container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+              <div
+                class="inner"
+                style="transform: translateY(0px); opacity: 1;"
+              >
+                <div class="pull-bottom bottom-left">
+                  <h1 class="text-white no-margin titilenexsize">
+                    <span class="semi-bold titilenexsize"
+                      >Front loading Cost - New Project</span
+                    >
+                    T80
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="bg-white">
+          <div class="container">
+            <ol class="breadcrumb breadcrumb-alt">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Groupe</li>
+              <li class="breadcrumb-item active">Members</li>
+
+    
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+
+   
+            <div class="card card-transparent">
+              <div class="card-header ">
+                <div class="card-title">List Of Members 
+                </div>
+              </div>
+              <div class="card-block">
+                <div class="row">
+              
+                  <div class="col-lg-4" *ngFor="let gr of allmember" > 
+
+            
+                    <div id="card-linear-color" class="card card-default bg-info-lighter">
+                      <div class="card-header  ">
+                        <div class="card-title"> {{ gr.users.email2 }}
+                        </div>
+                        <div class="card-controls">
+                          <ul>
+                          
+                            <li><a  (click)="deletemem(gr.id)" class="card-collapse" >
+                              <mat-icon style="color: red;" >delete</mat-icon></a>
+                            </li>
+                           
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="card-block">
+                        <h3>
+								<span class="semi-bold"> {{ gr.users.name  }}  <p> (   {{ gr.users.email  }} )</p> </span> </h3>
+                        <p>employee {{ gr.users.type | typereformat }} 
+                        </p>
+                      </div>
+                    </div>
+                  
+                </div>
+
+               
+                  
+               
+                </div>
+              </div>
+            </div>
+          
+
+
+    </div>
+  </div>
+</div>
